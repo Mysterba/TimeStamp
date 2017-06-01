@@ -1,6 +1,7 @@
 var url = require('url');
 var express = require('express');
 const app = express()
+app.set( 'port', process.env.PORT || 3001 );
 var monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
@@ -39,6 +40,6 @@ app.get('/:time', function (req, res) {
 	
 })
 
-app.listen(8080, function () {
+app.listen(app.get('port'), function () {
   console.log('Example app listening on port 3000!')
 })
